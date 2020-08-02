@@ -54,20 +54,19 @@ def checkSource(link):
         r = requests.get(link)
         if r.status_code != 200:
             return False
-        if "https://manganelo.com/manga/" in link:
-            if ("404 - PAGE NOT FOUND") in r.text: #manganelo returns a 200 response even though the link is not valid
-                return False
-            return True
-        return False
+        if ("404 - PAGE NOT FOUND") in r.text: #manganelo returns a 200 response even though the link is not valid
+            return False
+        return True
     except Exception as e:
         print(e)
         return False
 
 def main():
+    print(len(sys.argv))
     if len(sys.argv) != 2:
         print("Please add a manganelo link")
         sys.exit(-1)
-    link = sys.argv[1]
+    link = "https://manganelo.com/manga/" + str(sys.argv[1])
     if checkSource(link) == False:
         print("Please input valid link")
         sys.exit(-1)
@@ -95,8 +94,9 @@ def main():
         zipManga(saveFolder, title)
         os.chdir("..")
         shutil.rmtree(cacheDic)
-    except:
+    except Exception as e:
         print("Please input a valid manganelo link")
+        print(e)
         os.chdir("..")
         shutil.rmtree(cacheDic)
         sys.exit(-1)
