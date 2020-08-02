@@ -17,7 +17,8 @@ python mangaRipper.py [insert manga last path here]
 ```
 
 <h4>Example</h4>
-```bash
+
+```sh
 python mangaRipper.py rokudenashi_blues
 ```
 The program will ask you for a folder to save the manga in.
