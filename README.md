@@ -1,12 +1,12 @@
 # Manganelo Manga downloader
 A python program that will download manga from [manganelo](https://manganelo.com/)
 
-#Prerequisite
+# Prerequisite
 All the packages that is required to run Manga ripper can be installed by running 
 ````bash
 pip install -r requirements.txt
 ````
-#Downloading manga
+# Downloading manga
 You will need a manganelo manga link and copy the last path (Highlighted in blue) <br>
 ![example](Capture.png)
 
